@@ -1,2 +1,8 @@
 sites:
   - https://www.codefactor.io/
+  - https://wemake-python-stylegui.de/en/
+  - https://codecov.io/
+  - https://hynek.me/talks/
+  - https://github.com/hynek
+  - https://sourcery.ai/
+  - https://github.com/actions/setup-python
