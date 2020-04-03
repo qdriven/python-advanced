@@ -4,16 +4,24 @@ on:
     branches:
       - 'master'
 jobs:
+  static_check:
+
   codecov:
     name: Codecov Workflow
     runs-on: ubuntu-18.04
-
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python
         uses: actions/setup-python@master
         with:
           python-version: 3.8
+      - name: install all depenecies
+        run: pip install -r requirments.txt
+      - name: check format and fix code format issue
+        run: |
+          isort --recursive --diff
+          black --check .
+          flake8
       - name: Generate coverage report
         run: |
           pip install pytest
